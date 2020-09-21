@@ -14,10 +14,12 @@ $(function() {
       dataType: "json",
       data: data,
       success: function (result) {
+        $(".result-p").text("POST realizado con exito");
         console.log("success");
-        console.log(request.responseText);
+        //console.log(request.responseText);
       },
       error: function (request, status, error) {
+        $(".result-p").text("no se pudo realizar POST con exito");
         console.log(request.responseText);
       }
     });

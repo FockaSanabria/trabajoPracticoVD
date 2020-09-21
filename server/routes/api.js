@@ -18,14 +18,14 @@ module.exports = function(app){
         res.send('API. para hacer un POST, utilice la direccion http://localhost:3000/api');
     })
 
-    // POST method route
+    // ruta del metodo POST
     app.post(`${API_BASE}/`, validate(loginValidation, {}, {}), function (req, res) {
         //var nombre = req.body.nombre;
         //var apellido = req.body.apellido;
         //var dni = req.body.dni;
         //res.send(`POST request sent to the api: ${var1}`);
 
-        axios.post('https://jsonplaceholder.typicode.com/users', req.body)
+        axios.post('https://reclutamiento-14cf7.firebaseio.com/personas.json', req.body)
         .then((res) => {
           //console.log(`statusCode: ${res.statusCode}`)
           console.log("status code: " + res.status + " - " + res.statusText);
@@ -35,6 +35,6 @@ module.exports = function(app){
           console.error(error);
         })
 
-        res.send('{"response":"valid"}');
+        res.send('{"response":"valid"}');   
     });
 }
