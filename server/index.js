@@ -9,9 +9,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
-require("./routes/views")(app);
 require("./routes/api")(app);
+require("./routes/views")(app);
 
 app.listen(PORT, () => {
   console.log(`Servidor iniciado, http://localhost:${PORT}`);

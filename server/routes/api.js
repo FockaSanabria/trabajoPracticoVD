@@ -2,7 +2,7 @@ const API_BASE = "/api";
 const axios = require('axios')
 const { validate, ValidationError, Joi } = require('express-validation')
  
-const loginValidation = {
+const loginValidation = { //realiza la validacion
   body: Joi.object({
     apellido: Joi.string()
       .required(),
@@ -15,7 +15,7 @@ const loginValidation = {
 
 module.exports = function(app){
     app.get(`${API_BASE}/`, (req, res) => {
-        res.send('api base');
+        res.send('API. para hacer un POST, utilice la direccion http://localhost:3000/api');
     })
 
     // POST method route
@@ -36,6 +36,5 @@ module.exports = function(app){
         })
 
         res.send('{"response":"valid"}');
-
     });
 }
