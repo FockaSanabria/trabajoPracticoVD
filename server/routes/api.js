@@ -21,6 +21,6 @@ module.exports = function(app){
     app.post(`${API_BASE}/`, validate(loginValidation, {}, {}), function (req, res) {
         //var var1 = req.body.usr;
         //res.send(`POST request sent to the api: ${var1}`);
-        res.send(`valid post`);
+        //res.send(`valid post`);
     });
 }

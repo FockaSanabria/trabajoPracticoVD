@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.serializejson.js"></script>
+<script>
+
+
+$(function() {
+  $('#crearPersonasForm').on("submit",function(e) {
+    e.preventDefault(); // cancel the actual submit
+
+    var data = $('#crearPersonasForm').serializeJSON(); 
+    console.log(data);
+    
+    /*$.post("http://localhost:3000/api",   // url
+    data, // data to be submit
+         );*/
+    $.ajax({
+      url: 'http://localhost:3000/api',
+      type: "POST", 
+      dataType: "json",
+      data: data,
+      success: function (result) {
+        console.log("success");
+        alert(request.responseText);
+      },
+      error: function (request, status, error) {
+        alert(request.responseText);
+      }
+    });
+  })
+});
+
+
+</script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 460px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.submit-bttn{
+    text-align: center;
+}
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 100%;
+  margin-top: 6px;
+  padding: 40px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+    <div class="wrapper">
+<div class="container">
+  <div class="title" style="text-align:center">
+    <h2>FORM</h2>
+    <p>realice un POST</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <form class="form" action="http://localhost:3000/api" method="POST" id="crearPersonasForm">
+        <label for="fname">Nombre</label>
+        <input type="text" id="fname" name="nombre" placeholder="ingrese su nombre...">
+        <label for="lname">Apellido</label>
+        <input type="text" id="lname" name="apellido" placeholder="ingrese su apellido...">
+		<label for="fname">DNI</label>
+        <input type="text" id="fname" name="dni" placeholder="ingrese su DNI...">
+        <div class="submit-bttn">
+            <input type="submit" value="enviar">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
