@@ -13,25 +13,25 @@
 
 ## Uso
 
-
+###Ejercio 2
 Las respuestas teoricas del ejercicio 2 estan en el archivo respuestasTeoricas.pdf
 
-
+###Ejercio 3
 Las capturas del ejercicio 3 estan en el archivo ejercicio3.pdf
 
-
+###Ejercio 4
 Para ejecutar el script del ejercicio 4 abrir la consola en el directorio mostrarPersonas y ejecutar el comando "node ."
 
 El script mostrara el resultado por consola en formato JSON
 
-
+###Ejercio 5
 Para iniciar el servidor del ejercicio 5 abrir la consola en el directorio server y ejecutar el comando "node ."
 
 Utilizara el puerto 3000.
 
 Para hacer un POST, utilizar la direccion "http://localhost:3000/api"
 
-
+###Ejercio 6
 El ejercicio del punto 6 se encuentra dentro de la carpeta crearPersonas
 
 
