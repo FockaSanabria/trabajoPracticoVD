@@ -14,5 +14,5 @@ require("./routes/views")(app);
 require("./routes/api")(app);
 
 app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
+  console.log(`Servidor iniciado, http://localhost:${PORT}`);
 })
